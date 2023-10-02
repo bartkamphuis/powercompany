@@ -10,21 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_02_015611) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_02_001647) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.decimal "balance", precision: 20, scale: 10
+    t.integer "balance_cents", default: 0, null: false
+    t.string "balance_currency", default: "NZD", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "packs", force: :cascade do |t|
     t.string "name"
-    t.decimal "price", precision: 20, scale: 10
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "NZD", null: false
     t.decimal "energy_units"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

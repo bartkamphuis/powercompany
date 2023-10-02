@@ -3,7 +3,7 @@ class CreateCustomers < ActiveRecord::Migration[7.0]
     create_table :customers do |t|
       t.string :name
       t.string :email
-      t.decimal :balance
+      t.monetize :balance
 
       t.timestamps
     end
