@@ -17,7 +17,7 @@ Things you may want to cover:
 
 * How to run the test suite
 ```bash
-rspec
+bundle exec rspec -f d
 ```
 
 * Services (job queues, cache servers, search engines, etc.)
@@ -25,15 +25,13 @@ rspec
 * Deployment instructions
 
 -------------------------------------
-
-
-  Me coding without TDD:
+coding without TDD:
 
 1. Get the functionality in place
 2. Make the code testable
 3. Write tests
 
-Me coding with TDD:
+coding with TDD:
 
 1. Write the tests
 2. Get the functionality in place
