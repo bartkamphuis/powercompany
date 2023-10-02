@@ -1,0 +1,2 @@
+class WholesaleDeal < ApplicationRecord
+end
