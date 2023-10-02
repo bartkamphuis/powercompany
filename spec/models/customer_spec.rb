@@ -16,5 +16,15 @@ RSpec.describe Customer, type: :model do
     expect(customer).to_not be_valid
   end
 
+  describe '#total_spent' do
+    it 'calculates the total amount spent by the customer' do
+      customer = create(:customer)
+      pack = create(:pack)
+      3.times { create(:purchase, customer:, pack:) }
+
+      expect(customer.total_spent).to eq(15_000)  # 150.00 NZD
+    end
+  end
+
 end
 

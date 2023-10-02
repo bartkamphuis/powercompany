@@ -4,4 +4,8 @@ class Customer < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :balance, presence: true
+
+  def total_spent
+    purchases.sum { |purchase| purchase.pack.price.cents }
+  end
 end
