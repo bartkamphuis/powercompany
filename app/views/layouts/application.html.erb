@@ -1,21 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--  <head>-->
-<!--    <title>Powercompany</title>-->
-<!--    <meta name="viewport" content="width=device-width,initial-scale=1">-->
-<%#= csrf_meta_tags %>
-<%#= csp_meta_tag %>
-
-<%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-<%#= javascript_importmap_tags %>
-<!--  </head>-->
-
-<!--  <body>-->
-<%#= yield %>
-<!--  </body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
@@ -34,7 +16,6 @@
       html, body {
           height: 100%;
       }
-
       .flex-content {
           flex: 1;
           overflow: auto;
@@ -44,21 +25,17 @@
 <body class="flex flex-col h-full bg-gray-100">
 <!-- Navbar -->
 <%= render 'layouts/navbar' %>
-
 <div class="flex flex-content">
   <!-- Sidebar -->
   <%= render 'layouts/sidebar' %>
-
   <!-- Main Content -->
   <main class="w-3/4 bg-white p-4 ml-4 overflow-auto">
     <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
     <%= yield %>
     <!-- Cards -->
     <%= render 'layouts/cards' %>
-
   </main>
 </div>
-
 <!-- Footer -->
 <%= render 'layouts/footer' %>
 </body>
