@@ -7,9 +7,8 @@ class PurchaseService
 
   def call
     return false unless sufficient_balance?
-
-    create_purchase
-    update_customer_balance
+  
+    PurchaseJob.perform_later(@customer, @pack)
     true
   end
 
