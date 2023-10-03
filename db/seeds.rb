@@ -14,5 +14,19 @@ def create_packs
   end
 end
 
-# Call the method to create packs
-create_packs
+def create_customers
+  10.times do
+    FactoryBot.create(:customer)
+  end
+end
+
+def create_wholesale_deals
+  10.times do
+    FactoryBot.create(:wholesale_deal)
+  end
+end
+
+# Call the method to create packs & customers
+# create_packs
+# create_customers
+# create_wholesale_deals
