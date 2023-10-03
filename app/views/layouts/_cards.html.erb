@@ -1,22 +1,5 @@
-<!--<div class="grid grid-cols-3 gap-4">-->
-  <%# 10.times do %>
-<!--    <div class="bg-gray-100 p-4">-->
-<!--      <h2 class="text-lg font-semibold mb-2">Card 1</h2>-->
-<!--      <p>Content...</p>-->
-<!--    </div>-->
-<!--    <div class="bg-gray-100 p-4">-->
-<!--      <h2 class="text-lg font-semibold mb-2">Card 2</h2>-->
-<!--      <p>Content...</p>-->
-<!--    </div>-->
-<!--    <div class="bg-gray-100 p-4">-->
-<!--      <h2 class="text-lg font-semibold mb-2">Card 3</h2>-->
-<!--      <p>Content...</p>-->
-<!--    </div>-->
-  <%# end %>
-<!--</div>-->
-
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <% @packs.each do |pack| %>
+  <% (@packs || []).each do |pack| %>
     <div class="card bg-gray-100 p-4 rounded-lg">
       <h3 class="text-xl font-bold mb-2"><%= pack.name %></h3>
       <p>$ <%= pack.price %></p>

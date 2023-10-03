@@ -14,3 +14,82 @@
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+pre {
+    @apply p-3 overflow-auto text-sm leading-relaxed;
+    background-color: #999999;
+    border-radius: 0.375rem;
+
+    margin-bottom: 10px;  /* Adjust as needed */
+    margin-top: 10px;  /* Adjust as needed */
+}
+
+code {
+    @apply p-2 rounded font-mono text-sm;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+.response {
+    /*@apply p-3 overflow-auto text-sm leading-relaxed;*/
+    /*background-color: #999999;*/
+    /*border-radius: 0.375rem;*/
+    @apply text-black;
+}
+
+.response p {
+    margin-bottom: 5px;  /* Adjust as needed */
+    margin-top: 5px;  /* Adjust as needed */
+}
+
+.response a {
+    color: #005a94; /* Change to any color you prefer */
+    font-size: 1.1em; /* Adjust size as needed */
+    text-decoration: underline; /* Adds an underline */
+}
+
+.response a:hover {
+    text-decoration: none; /* Removes underline from hovered links */
+}
+
+.response ol {
+    list-style: decimal!important;
+    margin: 15px!important;
+    padding: 15px!important;
+}
+
+.response h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.response h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.response h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.response h4 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.response h5 {
+    font-size: 0.8em;
+    font-weight: bold;
+}

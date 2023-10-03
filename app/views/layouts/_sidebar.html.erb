@@ -12,7 +12,8 @@
     <ul>
       <% @customers.each do |customer| %>
         <li class="mb-2">
-          <%= link_to customer.name, "#", class: "text-blue-500" %>
+          <%= link_to customer.name, show_customer_path(customer), remote: true %>
+          <%#= link_to customer.name, "#", class: "text-blue-500" %>
         </li>
       <% end %>
     </ul>

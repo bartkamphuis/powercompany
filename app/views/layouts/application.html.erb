@@ -23,20 +23,13 @@
   </style>
 </head>
 <body class="flex flex-col h-full bg-gray-100">
-<!-- Navbar -->
 <%= render 'layouts/navbar' %>
 <div class="flex flex-content">
-  <!-- Sidebar -->
   <%= render 'layouts/sidebar' %>
-  <!-- Main Content -->
-  <main class="w-3/4 bg-white p-4 ml-4 overflow-auto">
-    <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+  <main class="w-3/4 bg-white p-4 ml-4 overflow-auto" id="main-content">
     <%= yield %>
-    <!-- Cards -->
-    <%= render 'layouts/cards' %>
   </main>
 </div>
-<!-- Footer -->
 <%= render 'layouts/footer' %>
 </body>
 </html>
