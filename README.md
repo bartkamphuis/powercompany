@@ -1,84 +1,75 @@
-# README
+# Power Company Application
 
-* Ruby version: ruby 3.2.2
+This application simulates a power company's operations where customers can pre-pay for power packs, and purchase and use energy units.
 
-* System dependencies
+## Ruby Version
+- Ruby 3.2.2
 
-* Configuration
+## System Dependencies
 
-* Database creation
+- Rails 7.0.0
+- PostgreSQL
 
-* Database initialization
+## Configuration
 
-* How to run the test suite
+Clone the repository and run `bundle install` to install the required gems and dependencies.
+
+## Database Creation and Initialization
+
+- Run `rails db:create` to create the database.
+- Run `rails db:migrate` to run database migrations.
+- Run `rails db:seed` to populate the database with initial data.
+
+## Running the Test Suite
+
+Run the following command to execute the test suite:
+
 ```bash
 bundle exec rspec -f d
 ```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
--------------------------------------
-coding without TDD:
-
-1. Get the functionality in place
-2. Make the code testable
-3. Write tests
-
-coding with TDD:
-
-1. Write the tests
-2. Get the functionality in place
-
-The difference is small but significant.
-
-------------------------------------
-## Models and attributes
-
-#### Customer
+## Models
+### Customer
 
 Attributes:
-
-- name: Name of the customer.
-- email: Email of the customer.
-- balance: Current balance of prepaid units.
-
-Associations:
-- Has many purchases.
-
-#### Pack
-
-Attributes:
-- name: Name of the pack.
-- price: Price of the pack (use decimal type for this attribute).
-- energy_units: Amount of energy units in the pack.
-
-Associations:
-- Has many purchases.
-
-#### WholesaleDeal
-
-Attributes:
-- discount_rate: Discount rate for the packs (use decimal type for this attribute).
-- start_date: Start date of the wholesale deal.
-- end_date: End date of the wholesale deal.
-
-#### Purchase
-Attributes:
-
-- purchase_date: Date when the purchase was made.
+* `name`: Name of the customer.
+* `email`: Email of the customer.
+* `balance`: Current balance of prepaid units in cents. Utilizes Money-rails gem to handle money attributes.
 
 Associations:
 
-- Belongs to customer.
-- Belongs to pack.
+* Has many purchases.
 
-generators to create these models:
+### Pack
 
-```bash
-rails generate model Customer name:string email:string balance:decimal
-rails generate model Pack name:string price:decimal energy_units:decimal
-rails generate model WholesaleDeal discount_rate:decimal start_date:date end_date:date
-rails generate model Purchase purchase_date:date customer:references pack:references
-```
+Attributes:
+
+* `name`: Name of the pack.
+* `price_cents`: Price of the pack in cents. Utilizes Money-rails gem to handle money attributes.
+* `energy_units`: Amount of energy units in the pack.
+
+Associations:
+* Has many purchases.
+
+### WholesaleDeal
+
+Attributes:
+* `discount_rate`: Discount rate for the packs.
+* `start_date`: Start date of the wholesale deal.
+* `end_date`: End date of the wholesale deal.
+
+Associations:
+* Belongs to vendor (if applicable).
+* Has many packs.
+
+### Purchase
+
+Attributes:
+
+* `purchase_date`: Date when the purchase was made.
+
+Associations:
+
+* Belongs to customer.
+* Belongs to pack.
+
