@@ -9,24 +9,23 @@ require 'factory_bot_rails'
 
 # Define a method to create packs
 def create_packs
-  10.times do
+  20.times do
     FactoryBot.create(:pack)
   end
 end
 
 def create_customers
-  10.times do
+  50.times do
     FactoryBot.create(:customer)
   end
 end
 
 def create_wholesale_deals
-  10.times do
+  30.times do
     FactoryBot.create(:wholesale_deal)
   end
 end
 
-# Call the method to create packs & customers
-# create_packs
-# create_customers
-# create_wholesale_deals
+create_packs
+create_customers
+create_wholesale_deals
