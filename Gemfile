@@ -78,3 +78,5 @@ end
 
 gem 'money'
 gem 'money-rails'
+
+gem "tailwindcss-rails", "~> 2.0"
