@@ -1,0 +1,2 @@
+class PowerPack < Pack
+end
