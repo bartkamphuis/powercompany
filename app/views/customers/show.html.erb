@@ -1,4 +1,4 @@
-<%= link_to 'Add Pack', new_customer_pack_path(@customer), id: 'add-pack-link' %>
+<%= link_to 'Add Pack', new_customer_pack_path(@customer), id: 'add-packs-link' %>
 
 <%= form_with(model: @purchase, url: add_pack_customer_path(@customer)) do |form| %>
   <%= form.label :pack_id, "Pack" %>

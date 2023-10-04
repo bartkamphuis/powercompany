@@ -12,7 +12,7 @@ RSpec.describe PurchaseService do
         expect { service.call }.to change(Purchase, :count).by(1)
       end
 
-      it 'deducts the pack price from the customer balance' do
+      it 'deducts the packs price from the customer balance' do
         expect { service.call }.to change {  customer.reload.balance }.from(Money.new(10_000, 'NZD')).to(Money.new(10_000, 'NZD') - pack_price)
       end
 

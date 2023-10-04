@@ -8,12 +8,16 @@ Rails.application.routes.draw do
 
   get 'pages/customer/:id', to: 'pages#show_customer', as: 'show_customer'
 
-  resources :customers do
-    post 'add_pack', on: :member
-  end
+  # resources :customers do
+  #   post 'add_pack', on: :member
+  # end
+  #
+  # resources :customers do
+  #   resources :packs, only: [:new, :create]
+  # end
 
-  resources :customers do
-    resources :packs, only: [:new, :create]
-  end
+  resources :customers
+  resources :packs
+
 
 end
