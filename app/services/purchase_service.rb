@@ -1,5 +1,4 @@
 class PurchaseService
-
   def initialize(customer, pack)
     @customer = customer
     @pack = pack
@@ -7,7 +6,7 @@ class PurchaseService
 
   def call
     return false unless sufficient_balance?
-  
+
     PurchaseJob.perform_later(@customer, @pack)
     true
   end
@@ -16,14 +15,5 @@ class PurchaseService
 
   def sufficient_balance?
     @customer.balance >= @pack.price
-  end
-
-  def create_purchase
-    Purchase.create!(customer: @customer, pack: @pack, purchase_date: Date.today)
-  end
-
-  def update_customer_balance
-    @customer.balance -= @pack.price
-    @customer.save!
   end
 end
