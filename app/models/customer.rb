@@ -7,6 +7,6 @@ class Customer < ApplicationRecord
   validates :balance, presence: true
 
   def total_spent
-    power_packs.sum { |purchase| purchase.pack.price.cents } + data_packs.sum { |purchase| purchase.pack.price.cents }
+    purchases.sum { |purchase| purchase.pack.price.cents }
   end
 end
