@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
-  has_many :purchases
+  has_many :power_packs, through: :purchases
+  has_many :data_packs, through: :purchases
   monetize :balance_cents, as: "balance", allow_nil: true
   validates :name, presence: true
   validates :email, presence: true
